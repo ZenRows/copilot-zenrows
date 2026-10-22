@@ -1,11 +1,11 @@
 ---
 name: using-zenrows
-description: Overview of the Zenrows tools for live web data. Use when a task needs the current content of a URL, specific fields from a page, many URLs fetched as one job, or a multi-step browser session (login, forms, pagination), especially for JavaScript-heavy pages where a plain fetch returns little. Covers which tool to pick, defaults, errors and plan limits. For a single concrete task, the focused skills (scrape-webpage, extract-structured-data, batch, crawl, map, browser-automation, capture-api-calls) go deeper.
+description: Overview of the Zenrows tools for live web data. Use when a task needs the current content of a URL, specific fields from a page, many URLs fetched as one job, the pages linked from a start URL, or a multi-step browser session (login, forms, pagination), especially for JavaScript-heavy pages where a plain fetch returns little. Covers which tool to pick, defaults, errors and plan limits. For a single concrete task, the focused skills (scrape-webpage, extract-structured-data, batch, crawl, map, browser-automation, capture-api-calls) go deeper.
 ---
 
 # Using Zenrows
 
-Zenrows gives Copilot live web data through the Zenrows MCP server: page fetching, structured extraction, batch jobs over many URLs, and hosted browser sessions. Zenrows is a paid service: every request uses credits on the user's Zenrows plan.
+Zenrows gives Copilot live web data through the Zenrows MCP server: page fetching, structured extraction, batch jobs over many URLs, crawls from a start URL, and hosted browser sessions. Zenrows is a paid service: every request uses credits on the user's Zenrows plan.
 
 The Zenrows MCP server signs in with OAuth. If the Zenrows tools are missing or return `AUTH003`, use the `getting-started` skill. Never ask the user to paste an API key into the conversation.
 
@@ -29,6 +29,10 @@ On `extract`, `mode` selects the extraction strategy. `scrape` has no `mode` par
 
 One managed job over many URLs: `batch_create` (`tasks` or `urls`, optional `wait`), `batch_status`, `batch_wait`, `batch_results` (optional `status` filter) and `batch_cancel`. Zenrows retries failed URLs server-side.
 
+### `crawl_*`
+
+One background job that follows links from a start URL: `crawl_create`, `crawl_wait`, `crawl_get`, `crawl_results`, `crawl_content`, `crawl_list`, `crawl_stop` and `crawl_download`. See the `crawl` skill.
+
 ### `browser_*`
 
 Hosted browser sessions for multi-step tasks: `browser_navigate`, `browser_click`, `browser_fill`, `browser_scroll`, `browser_evaluate`, `browser_screenshot`, `browser_get_html`, `browser_batch`, `browser_close`, plus cookie and tab management.
@@ -39,6 +43,7 @@ Hosted browser sessions for multi-step tasks: `browser_navigate`, `browser_click
 - Use `scrape` for single pages: documentation, articles, pricing pages, changelogs, product listings.
 - Use `extract` when the user wants named fields or JSON from one page, not its text.
 - Use `batch_create` when the user already has about five or more URLs. Below that, parallel `scrape` calls are simpler. Confirm the list size first: a batch bills per URL.
+- Use `crawl_create` when the user has one start page and wants the pages behind it. Confirm `max_pages` first: each page fetched bills as one scrape.
 - Use `browser_*` when the content needs interaction: forms, logins the user owns, pagination clicks, infinite scroll or multi-step navigation.
 - Send known browser steps as one `browser_batch` call (up to 50 ordered actions). Action names inside it drop the `browser_` prefix.
 - Default `response_type` to `markdown`. It is the most compact format.
@@ -77,4 +82,5 @@ Zenrows plans limit concurrent requests (for example 5 on the Developer plan).
 - Prefer one `batch_create` over many parallel `scrape` calls.
 - Always call `browser_close` when a browser session is done, to free a slot.
 - Keep at most one browser session open unless the task needs more.
+- An account runs at most 3 Batch and Crawl jobs at once by default, shared between the two.
 - A cancelled request can keep running on Zenrows for up to 3 minutes and holds a slot until it finishes.
