@@ -5,6 +5,8 @@ description: 'Pull specific data fields from one page rather than its full conte
 
 # Extract structured data
 
+The user's instructions take precedence over this skill. If they conflict, follow the user.
+
 Use the dedicated `extract` tool, not `scrape`. It returns structured JSON directly.
 
 ## Instructions

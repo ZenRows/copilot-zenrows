@@ -5,6 +5,8 @@ description: Fetch a list of URLs the user already has as one managed Zenrows jo
 
 # Batch
 
+The user's instructions take precedence over this skill. If they conflict, follow the user.
+
 Zenrows Batch queues many URLs as one server-side job, retries transient failures, and stores the results.
 
 ## When to use this instead of `scrape`

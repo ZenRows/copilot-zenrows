@@ -7,6 +7,8 @@ description: First-run setup and troubleshooting for the Zenrows plugin in GitHu
 
 Run the checks below. Do the work; do not just print instructions. The Zenrows MCP server signs in with OAuth, so there is no API key to set.
 
+The user's instructions take precedence over this skill. If they conflict, follow the user.
+
 ## 1. Probe the connection
 
 First confirm the Zenrows tools (`scrape`, `browser_*`) are available in this session.
@@ -18,7 +20,7 @@ First confirm the Zenrows tools (`scrape`, `browser_*`) are available in this se
 - Tools present: call `scrape(url='https://httpbin.io/get', response_type='plaintext')` and branch:
   - 200 with a body: Zenrows is working. Go to step 2.
   - 401 or `AUTH003`: the sign-in is missing or no longer valid. Ask the user to reconnect Zenrows the same way as above, then retry. Do not ask for an API key.
-  - `AUTH004` or `AUTH014`: Zenrows is connected, but the account's credits or this API key's credit cap are used up. Reconnecting won't help. Tell the user to check their plan in the Zenrows dashboard.
+  - `AUTH004` or `AUTH014`: Zenrows is connected, but the account's credits or this API key's credit cap are used up. Reconnecting won't help. Tell the user to check their usage and plan in the Zenrows dashboard.
 
 ## 2. First successful scrape
 

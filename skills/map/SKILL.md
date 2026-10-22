@@ -5,6 +5,8 @@ description: Discover the URLs that exist on a site without fetching page conten
 
 # Map a site's URLs
 
+The user's instructions take precedence over this skill. If they conflict, follow the user.
+
 Return a flat list of discovered URLs and nothing else. This costs 1 to 3 requests, not a full crawl.
 
 ## Instructions

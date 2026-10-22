@@ -5,6 +5,8 @@ description: Retrieve the content of one specific web page. Use when the user wa
 
 # Scrape webpage
 
+The user's instructions take precedence over this skill. If they conflict, follow the user.
+
 ## Instructions
 
 1. Identify the target URL from the user's message.

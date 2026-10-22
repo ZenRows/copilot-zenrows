@@ -5,6 +5,8 @@ description: 'Drive a page through steps before its content is available: clicki
 
 # Browser automation
 
+The user's instructions take precedence over this skill. If they conflict, follow the user.
+
 ## Instructions
 
 1. Open a session with `browser_navigate(url)`. Save the returned `session_id` and pass it to every later call.

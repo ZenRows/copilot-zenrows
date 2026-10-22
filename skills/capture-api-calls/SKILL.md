@@ -5,6 +5,8 @@ description: Discover the background API or XHR endpoints a page calls, or rever
 
 # Capture API calls
 
+The user's instructions take precedence over this skill. If they conflict, follow the user.
+
 ## Instructions
 
 1. Open a session with `browser_navigate(url)` and save the `session_id`.
