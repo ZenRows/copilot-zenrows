@@ -1,5 +1,7 @@
 # Zenrows for GitHub Copilot
 
+> Generated from [ZenRows/zenrows-integrations](https://github.com/ZenRows/zenrows-integrations/tree/main/dist/copilot), synced from main at c9734aa. Open issues and pull requests there; changes made here are overwritten.
+
 Live web data for GitHub Copilot. This plugin connects Copilot to the Zenrows MCP server, so Copilot can fetch the current content of any public page, pull structured fields from it, run batch jobs over many URLs, and drive a hosted browser for pages that need clicks, forms or pagination. It also adds skills that tell Copilot which Zenrows tool fits each task and how to keep requests efficient.
 
 ## What you get
@@ -28,11 +30,11 @@ A Zenrows account. Requests use credits on your Zenrows plan. You can [sign up h
 Install the plugin. In Copilot CLI, add this repository as a marketplace and install from it:
 
 ```
-copilot plugin marketplace add ZenRows/copilot-zenrows
+copilot plugin marketplace add ZenRows/zenrows-integrations
 copilot plugin install zenrows@zenrows
 ```
 
-In VS Code, run **Chat: Plugins** from the Command Palette and install from `ZenRows/copilot-zenrows`. For Copilot cloud agent, add the plugin to `enabledPlugins` in the repository's `.github/copilot/settings.json`.
+In VS Code, run **Chat: Plugins** from the Command Palette and install from `ZenRows/zenrows-integrations`. For Copilot cloud agent, add the plugin to `enabledPlugins` in the repository's `.github/copilot/settings.json`.
 
 Then sign in to Zenrows:
 
@@ -48,7 +50,7 @@ The plugin sends the URLs and options you ask Copilot to fetch to Zenrows, which
 ## Support
 
 - Documentation: [docs.zenrows.com](https://docs.zenrows.com)
-- Contact: [success@zenrows.com](mailto:success@zenrows.com)
+- Contact: [integrations@zenrows.com](mailto:integrations@zenrows.com)
 
 ## License
 

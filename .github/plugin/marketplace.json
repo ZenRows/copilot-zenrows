@@ -2,7 +2,7 @@
   "name": "zenrows",
   "owner": {
     "name": "Zenrows",
-    "email": "success@zenrows.com"
+    "email": "integrations@zenrows.com"
   },
   "metadata": {
     "description": "Zenrows for GitHub Copilot: live web data through the Zenrows MCP server.",

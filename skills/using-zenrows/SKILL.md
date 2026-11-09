@@ -7,7 +7,7 @@ description: Overview of the Zenrows tools for live web data. Use when a task ne
 
 Zenrows gives Copilot live web data through the Zenrows MCP server: page fetching, structured extraction, batch jobs over many URLs, crawls from a start URL, and hosted browser sessions. Zenrows is a paid service: every request uses credits on the user's Zenrows plan.
 
-The Zenrows plugin signs in with OAuth. If the Zenrows tools are missing or return `AUTH003`, use the `getting-started` skill. Never ask the user to paste an API key into the conversation.
+The Zenrows MCP server signs in with OAuth. If the Zenrows tools are missing or return `AUTH003`, use the `getting-started` skill. Never ask the user to paste an API key into the conversation.
 
 The user's instructions take precedence over this skill. If they conflict, follow the user.
 
